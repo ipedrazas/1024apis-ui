@@ -1,0 +1,39 @@
+<style media="screen">
+  .box{
+    padding-left: 30px;
+  }
+</style>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+        <h1>Kubernetes Watcher</h1>
+        Number of Pods: {{ pods.total }}
+
+        <ul ng-repeat="ns in namespaces">
+          <li>{{ ns.name }}:
+            <ul>
+                <li>Total: {{ ns.count }}</li>
+                <li>Pending: {{ ns.pending }}</li>
+                <li>Running: {{ ns.running }}</li>
+                <li>Failed: {{ ns.failed }}</li>
+            </ul>
+        </ul>
+  </div>
+  <div class="col-md-5">
+      <h2>Number of Nodes: {{ nodes.total }}</h2>
+      <ul ng-repeat="node in nodes">
+        <li>Node {{ node.metadata.name }}</li>
+        <ul>
+          <li>Capacity Pods: {{ node.status.capacity.pods }}</li>
+          <li>Capacity CPU: {{ node.status.capacity.cpu }}</li>
+          <li>Capacity Mem: {{ node.status.capacity.memory }}</li>
+          <li></li>
+          <li>Allocatable Pods: {{ node.status.allocatable.pods }}</li>
+          <li>Allocatable CPU: {{ node.status.allocatable.cpu }}</li>
+          <li>Allocatable Mem: {{ node.status.allocatable.memory }}</li>
+        </ul>
+      </ul>
+
+  </div>
+</div>
