@@ -4,8 +4,8 @@ angular.module('myApp.apiserver', [])
 
 .factory("kubeapi", function($http) {
 
-  var APISERVER = "https://146.148.7.28";
-  var TOKEN = "ya29.CjBWAxsnKXqgbLxg6uxBBXYJnPy9f_qyAUferCFcK3t40P51-sqCbA_xgotUXhya560";
+  var APISERVER = "https://23.251.130.232";
+  var TOKEN = "ya29.CjBZA2S5fsImnGr6tBVe8ftaJoH7Vka0TfHj9fu68S8cufDG8oZ8U3cVt7OeHdeImfs";
 
   var getAllPods = function(){
     return $http.get( APISERVER + '/api/v1/pods', {headers: {'Authorization': 'Bearer '+TOKEN}});
